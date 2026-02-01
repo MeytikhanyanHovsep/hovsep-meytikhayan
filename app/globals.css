@@ -1,0 +1,95 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: 'Nunito';
+  src: url("/fonts/Nunito/static/Nunito-Regular.ttf") format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Nunito-Light';
+  src: url("/fonts/Nunito/static/Nunito-Light.ttf") format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Rubik';
+  src: url("/fonts/Rubik_Vinyl/RubikVinyl-Regular.ttf") format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Satoshi';
+  src: url("/fonts/satoshi-Regular.otf") format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@theme {
+  --animate-spin-slow: spin 3s linear infinite;
+
+  --color-primary-glow: #3b82f6;
+
+  --color-dark: #001012;
+  --color-primary: #35ffb8;
+  /* --color-secondary: #c300ff; */
+  --color-secondary: #ffaa00;
+  --color-gray: #bbbbbb;
+  --color-white: #f5faff
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.nunito {
+  font-family: "Nunito", sans-serif;
+  font-weight: 700;
+}
+
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+.nunito-light {
+  font-family: "Nunito-Light", sans-serif;
+  font-weight: 300;
+  color: #ffaa00;
+  color: #bbbbbb;
+}
+
+.satoshi {
+  font-family: "Satoshi", sans-serif;
+}
+
+.rubik {
+  font-family: "Rubik", system-ui;
+}
+
+.container {
+  max-width: 1440px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 70px;
+  padding-right: 70px;
+}
+
+
+.animate-spin-custom {
+  animation: spin 3s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
