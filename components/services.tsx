@@ -58,37 +58,38 @@ const services = [
 export default function Services({ lang }: Props) {
     return (
         <section className="relative pt-30">
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[100px] aspect-square bg-radial from-primary/20 to-transparent blur-[4px] scale-[10] -z-1 pointer-events-none will-change-transform" />
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[100px] aspect-square bg-radial from-primary/20 to-transparent blur-xs scale-[10] -z-1 pointer-events-none will-change-transform" />
 
             <div className="container">
                 <Title index={3}>{lang ? "Services" : "Услуги"}</Title>
-            </div>
 
-            <div className="container grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-                {services.map((e, i) => (
-                    <div
-                        key={i}
-                        className="group rounded-[20px] relative p-[4px] overflow-hidden transform-gpu"
-                    >
-                        <div className="absolute z-[-1] w-full aspect-square top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 transition-all duration-500 scale-[1.3] opacity-0 group-hover:opacity-100 border-4 bg-linear-to-l from-primary/50 via-transparent to-transparent animate-spin-custom will-change-transform" />
+                <div className="grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+                    {services.map((e, i) => (
+                        <div
+                            key={i}
+                            className="group rounded-[20px] relative p-[3px] overflow-hidden transform-gpu"
+                        >
+                            {/* Анимация запускается только когда группа в состоянии hover за счет group-hover:animate-... */}
+                            <div className="absolute z-[-1] w-full aspect-square top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 transition-opacity duration-500 scale-[1.3] opacity-0 group-hover:opacity-100 border-4 bg-linear-to-l from-secondary/50 via-transparent to-transparent animate-spin-custom will-change-transform" />
 
-                        <div className="z-10 h-full rounded-[19px] flex flex-col bg-linear-to-b from-dark/70 to-dark backdrop-blur-lg p-4 gap-5 backface-hidden">
-                            <Image
-                                alt={e.img}
-                                src={`/images/icons/${e.img}.png`}
-                                width={60}
-                                height={60}
-                                className="h-[60px] mb-2 object-contain"
-                            />
-                            <h2 className="text-2xl text-white">
-                                {lang ? e.title[1] : e.title[0]}
-                            </h2>
-                            <p className="text-gray leading-relaxed">
-                                {lang ? e.description[1] : e.description[0]}
-                            </p>
+                            <div className="z-10 h-full rounded-[16px] flex flex-col bg-linear-to-b from-dark/50 to-dark/80 backdrop-blur-md p-4 gap-5 backface-hidden">
+                                <Image
+                                    alt={e.img}
+                                    src={`/images/icons/${e.img}.png`}
+                                    width={60}
+                                    height={60}
+                                    className="h-[60px] mb-2 object-contain"
+                                />
+                                <h2 className="text-2xl text-white">
+                                    {lang ? e.title[1] : e.title[0]}
+                                </h2>
+                                <p className="text-gray ">
+                                    {lang ? e.description[1] : e.description[0]}
+                                </p>
+                            </div>
                         </div>
-                    </div>
-                ))}
+                    ))}
+                </div>
             </div>
         </section>
     );

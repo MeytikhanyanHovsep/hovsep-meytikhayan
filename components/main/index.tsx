@@ -3,8 +3,8 @@ import React, { useEffect, useRef, useState } from "react";
 import HeroTypewriter from "./heroTypewriter";
 import Globe from "./globe";
 import Button from "../button";
-import InteractiveGrid from "./gridArea";
 import Image from "next/image";
+import FloatingLines from "./bg";
 
 type Props = { lang: boolean };
 
@@ -14,17 +14,33 @@ export default function Main({ lang }: Props) {
     return (
         <>
             <main className="h-screen relative w-full ">
+                <FloatingLines
+                    linesGradient={["#26ffa5", "#26ffff", "#26ffa5"]}
+                    enabledWaves={["top", "middle", "bottom"]}
+                    lineCount={3}
+                    lineDistance={30}
+                    bendRadius={100}
+                    bendStrength={-0.5}
+                    interactive={true}
+                    parallax={true}
+                />
+
                 <div className="container grid grid-cols-2 h-full">
-                    <div className="h-full items-start flex gap-[10px] flex-col max-w-min justify-center z-50 relative ">
-                        <p className="text-[25px] mb-[-10px]">
-                            <span className="satoshi text-[32px]">
-                                [0<span className="text-primary">0</span>]
-                            </span>{" "}
-                            {lang ? "Hi I am" : "Привет я"}
+                    <div className="h-full items-start flex gap-3 flex-col max-w-min justify-center z-50 relative ">
+                        <div className="text-[25px] mb-[-10px]">
+                            {lang ? "I am " : "Я "}
+
+                            <h1 className=" inline text-primary  whitespace-nowrap">
+                                {lang ? (
+                                    <>Hovsep Meytikhanyan</>
+                                ) : (
+                                    <>Овсеп Мейтиханян</>
+                                )}
+                            </h1>
+                        </div>
+                        <p className="text-white text-[60px] whitespace-nowrap">
+                            {lang ? "Web Developer" : "Веб Разработчик"}
                         </p>
-                        <h1 className="text-primary text-[52px] whitespace-nowrap">
-                            {lang ? "Hovsep Meytikhanyan" : "Овсеп Мейтиханян"}
-                        </h1>
                         <HeroTypewriter
                             words={
                                 lang
@@ -40,7 +56,7 @@ export default function Main({ lang }: Props) {
                                       ]
                             }
                         />
-                        <p className="text-gray text-[18px] my-[25px]">
+                        <p className="text-gray my-[25px]">
                             {lang
                                 ? "I develop websites and web applications with a focus on usability, speed, and clean code."
                                 : "Занимаюсь разработкой сайтов и веб-приложений с упором на удобство, скорость и чистый код."}
@@ -62,14 +78,10 @@ export default function Main({ lang }: Props) {
                     </div>
 
                     <div className="h-full  max-w-full justify-end relative flex items-center">
-                        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[25%] aspect-square bg-radial from-primary/40 to-transparent blur-[50px] scale-[4] opacity-100 pointer-events-none will-change-transform"></div>
-                        <Image
-                            src="/images/main.png"
-                            alt="x"
-                            className="min-w-[500px] object-contain"
-                            width={300}
-                            height={300}
-                        />
+                        <div
+                            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[30%] aspect-square bg-radial from-primary/20 to-transparent blur-[20px] scale-[4] 
+                        pointer-events-none will-change-transform"
+                        ></div>
                     </div>
                 </div>
             </main>

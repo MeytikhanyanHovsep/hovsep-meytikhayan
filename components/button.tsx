@@ -53,11 +53,11 @@ const Button = ({ children, filled = false }: Props) => {
             whileTap={{ scale: 0.975 }}
             onMouseEnter={scramble}
             onMouseLeave={stopScramble}
-            className={`group relative overflow-hidden  rounded-[30px] py-[15px] px-[30px]  cur-border border-primary cursor-pointer  transition-all duration-300  ${filled ? "text-black bg-primary" : "text-primary border-2 bg-transparent"} ${children.length < 16 ? "min-w-[200px]" : "min-w-[250px]"}`}
+            className={`group relative overflow-hidden  rounded-[30px] py-[15px] px-[30px]  cur-border border-primary cursor-pointer  transition-all duration-300  ${filled ? "text-black bg-linear-to-r to-secondary from-primary" : "text-primary border-2 bg-transparent"} ${children.length < 16 ? "min-w-[200px]" : "min-w-[250px]"}`}
         >
             <motion.div className="flex mx-auto items-center w-min">
-                <div className="relative z-10 flex w-min items-center">
-                    <span className="invisible overflow-hidden whitespace-nowrap">
+                <div className="relative font-bold z-10 flex w-min items-center">
+                    <span className="invisible  overflow-hidden whitespace-nowrap">
                         {children}
                     </span>
 

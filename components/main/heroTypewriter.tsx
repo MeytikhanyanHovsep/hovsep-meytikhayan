@@ -56,7 +56,7 @@ export default function HeroTypewriter({ words }: { words: string[] }) {
                 transition={{ duration: 0.8, repeat: Infinity, ease: "linear" }}
                 className="w-[3px] ml-[5px] h-[80%] rounded-[10px] bg-secondary/80"
             />
-            <motion.span className="rubik  text-[30px] text-transparent">
+            <motion.span className="rubik  text-[30px] text-shadow-none! text-transparent">
                 {"."}
             </motion.span>
         </div>

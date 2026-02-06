@@ -33,11 +33,13 @@
 
   --color-primary-glow: #3b82f6;
 
-  --color-dark: #001012;
-  --color-primary: #35ffb8;
-  --color-secondary: #ffaa00;
-  --color-gray: #bbbbbb;
-  --color-white: #f5faff
+  --color-dark: #050100;
+  --color-primary: #26ffff;
+  --color-secondary: #26ffa5;
+  --color-gray: #c9c9c9;
+  --color-white: #f5faff;
+  --animate-spin-slow: spin 3s linear infinite;
+  --animate-spin-custom: spin 3s linear infinite;
 }
 
 html {
@@ -58,8 +60,13 @@ body {
 .nunito-light {
   font-family: "Nunito-Light", sans-serif;
   font-weight: 300;
-  color: #ffaa00;
   color: #bbbbbb;
+  color: #c9c9c9;
+}
+
+.text-white,
+.text-gray {
+  text-shadow: 0 0 2px black;
 }
 
 .satoshi {
@@ -81,6 +88,25 @@ body {
 
 .animate-spin-custom {
   animation: spin 3s linear infinite;
+}
+
+
+
+.swiper-pagination>.swiper-pagination-bullet {
+  background: #26ffffa6 !important;
+  width: 24px;
+  margin: 0 6px !important;
+  height: 24px;
+  transition: 0.3s;
+  border-radius: 7px;
+}
+
+.swiper-pagination>.swiper-pagination-bullet-active {
+  background-color: #26ffff !important;
+  width: 24px;
+  transition: 0.3s;
+  height: 24px;
+  border-radius: 7px;
 }
 
 @keyframes spin {

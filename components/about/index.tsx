@@ -26,7 +26,7 @@ export default function About({ lang }: Props) {
     const getStyles = (item: any) => {
         const { x, y, z, ind, logo } = item;
         let left = x * 70 + z * 70;
-        let top = y * 80 - 45 * x + z * 40;
+        let top = y * 80 - 35 * x + z * 35;
         console.log(x * 80, 45 * x, logo);
 
         return {
@@ -46,7 +46,7 @@ export default function About({ lang }: Props) {
         <section className="pt-30 -mt-30">
             <div className="container grid grid-cols-2 gap-10 items-center">
                 <div className="relative ml-[50px] h-[200px]">
-                    {/* {cubes.map((e, i) => (
+                    {cubes.map((e, i) => (
                         <TechBlock
                             key={i}
                             color={e.color}
@@ -54,17 +54,17 @@ export default function About({ lang }: Props) {
                             isBottom={getStyles(e)["isBottom"]}
                             logoUrl={e.logo}
                         />
-                    ))} */}
+                    ))}
                 </div>
-                <div className="flex flex-col">
+                <div className="flex  flex-col">
                     <Title index={1}>{lang ? "About me" : "О себе"}</Title>
-                    <div className="flex flex-col gap-5">
-                        <p className="text-gray text-[18px]">
+                    <div className="flex items-start flex-col gap-5">
+                        <p className="text-gray">
                             {lang
                                 ? "I am a web developer specializing in website development and the client side of web applications. I work with modern technologies, creating responsive interfaces and clear project structures."
                                 : "Я веб-разработчик, специализируюсь на разработке сайтов и клиентской части веб-приложений. Работаю с современными технологиями, делаю адаптивные интерфейсы и понятную структуру проекта."}
                         </p>
-                        <p className="text-gray text-[18px]">
+                        <p className="text-gray">
                             {lang
                                 ? "In my work, I focus on logic, performance, and user experience. I try not to complicate solutions unnecessarily and always focus on the task at hand and the result that the client needs."
                                 : "В процессе работы уделяю внимание логике, производительности и удобству пользователя. Стараюсь не усложнять решения без необходимости и всегда ориентируюсь на задачу и результат, который нужен клиенту."}
@@ -79,8 +79,8 @@ export default function About({ lang }: Props) {
                                 </p>
                             ))}
                         </div>
-                        <div className="grid grid-cols-3">
-                            <div className=" flex flex-col capitalize items-center py-5 border-r-4 border-primary/50">
+                        <div className="grid w-full my-2 grid-cols-3">
+                            <div className=" flex flex-col capitalize items-center pb-2 pt-3 border-r-4 border-secondary/50">
                                 <span className="text-primary leading-[100%]  flex items-center gap-2  relative text-[46px]">
                                     10
                                     <span className="text-secondary absolute top-[42%] -translate-1/2 left-[calc(132%)]">
@@ -91,7 +91,7 @@ export default function About({ lang }: Props) {
                                     {lang ? "Clients" : "Клиентов"}
                                 </p>
                             </div>
-                            <div className=" flex flex-col capitalize items-center py-5 border-r-4 border-primary/50">
+                            <div className=" flex flex-col capitalize items-center pb-2 pt-3 border-r-4 border-secondary/50">
                                 <span className="text-primary leading-[100%]  flex items-center gap-2  relative text-[46px]">
                                     20
                                     <span className="text-secondary absolute top-[42%] -translate-1/2 left-[calc(132%)]">
@@ -102,7 +102,7 @@ export default function About({ lang }: Props) {
                                     {lang ? "Projects" : "Проектов"}
                                 </p>
                             </div>
-                            <div className=" flex flex-col capitalize items-center py-5">
+                            <div className=" flex flex-col capitalize items-center pb-2 pt-3">
                                 <span className="text-primary leading-[100%]  flex items-center gap-2  relative text-[46px]">
                                     04{" "}
                                     <span className="text-secondary absolute top-[42%] -translate-1/2 left-[calc(132%)]">
@@ -114,15 +114,10 @@ export default function About({ lang }: Props) {
                                 </p>
                             </div>
                         </div>
-                        <div className="flex gap-2">
-                            <Button>
-                                {lang ? "My contacts" : "Мои контакты"}
-                            </Button>
-                            <Button filled={true}>
-                                {lang ? "My contacts" : "Мои контакты"}
-                            </Button>
-                        </div>
-                        <p>"какой кнопка лучше смотрится, тот и оставляем"</p>
+
+                        <Button filled={true}>
+                            {lang ? "My contacts" : "Мои контакты"}
+                        </Button>
                     </div>
                 </div>
             </div>
