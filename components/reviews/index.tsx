@@ -1,19 +1,17 @@
 import React, { useRef, useState } from "react";
-// Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
+import { memo } from "react";
 
-// Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 
-// import required modules
 import { Pagination, Navigation } from "swiper/modules";
 import Item from "./item";
 import Title from "../title";
 type Props = { lang: boolean };
 
-export default function Reviews({ lang }: Props) {
+const Reviews = memo(function Reviews({ lang }: Props) {
     const reviews = [
         {
             name: "Jordidsx",
@@ -53,25 +51,43 @@ export default function Reviews({ lang }: Props) {
     ];
     return (
         <>
-            <section className="relative pt-30">
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[10%] h-[40px] -rotate-25 bg-radial from-primary/20 rounded-full to-transparent blur-md scale-[10] -z-10 pointer-events-none will-change-transform" />
+            <section
+                id="reviews"
+                className="relative  py-30 max-md:py-10 max-2xl:py-20"
+            >
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 max-sm:w-[60%] -translate-y-1/2 w-[80%] h-[350px] -rotate-25 bg-radial from-primary/20 rounded-full blur-md via-transparent to-transparent   -z-10 pointer-events-none will-change-transform" />
                 <div className="container z-20">
                     <Title index={3} dir="center">
                         {lang ? "Reviews" : "Отзывы"}
                     </Title>
                     <Swiper
-                        slidesPerView={3}
-                        spaceBetween={24}
+                        slidesPerView={1}
+                        spaceBetween={8}
                         loop={true}
                         modules={[Pagination, Navigation]}
                         pagination={{
                             clickable: true,
                         }}
+                        breakpoints={{
+                            576: {
+                                slidesPerView: 2,
+                            },
+                            768: {
+                                spaceBetween: 16,
+                            },
+
+                            1024: {
+                                slidesPerView: 3,
+                            },
+                            1440: {
+                                spaceBetween: 24,
+                            },
+                        }}
                         navigation={{
                             nextEl: ".custom-next",
                             prevEl: ".custom-prev",
                         }}
-                        className="mySwiper pb-20!"
+                        className="mySwiper max-2xl:pb-17! max-md:mb-0 pb-20!"
                         style={{
                             WebkitMaskImage:
                                 "linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%)",
@@ -89,4 +105,6 @@ export default function Reviews({ lang }: Props) {
             </section>
         </>
     );
-}
+});
+
+export default Reviews;

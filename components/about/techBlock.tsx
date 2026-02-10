@@ -11,8 +11,6 @@ interface TechBlockProps {
 
 const TechBlock = memo(
     ({ logoUrl, color, size = 70, style, isBottom }: TechBlockProps) => {
-        console.log(color);
-
         return (
             <div
                 style={{
@@ -20,7 +18,7 @@ const TechBlock = memo(
                     height: size,
                     ...style,
                 }}
-                className="absolute group hover:scale-110 duration-300 will-change-transform cursor-pointer"
+                className="absolute max-md:translate-x-[-100%] group hover:scale-110 duration-300 will-change-transform cursor-pointer"
             >
                 <div
                     className="absolute z-10 w-[70%] h-[70%] left-1/2 top-[2%] -translate-1/2"
@@ -60,7 +58,7 @@ const TechBlock = memo(
                         className="w-full drop-shadow-xl h-full object-contain"
                     />
                 </div>
-                <div className="relative left-1/2 group-hover:opacity-100 transition-opacity duration-300 opacity-90 top-1/2 -translate-1/2 w-28 h-28">
+                <div className="relative left-1/2 group-hover:opacity-100 transition-opacity duration-300 opacity-90  top-1/2 -translate-1/2 w-28 h-28">
                     <Image
                         width={200}
                         height={200}
@@ -114,7 +112,7 @@ const TechBlock = memo(
                         transform:
                             "translateZ(-50px) translateX(-50%) scale(10)",
                     }}
-                    className={`absolute -bottom-[20%] left-1/2 w-[13%] h-[8%] rounded-full blur-[1px] opacity-60 z-[-1] pointer-events-none will-change-transform ${isBottom ? "" : "hidden"}`}
+                    className={`absolute -bottom-[20%] left-1/2 w-[13%] h-[8%] rounded-full blur-[1px]  z-[-1] pointer-events-none will-change-transform ${isBottom ? "" : "hidden"} ${color.includes("#000") ? "opacity-50" : "opacity-90"}`}
                 />
             </div>
         );

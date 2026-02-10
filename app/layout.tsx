@@ -18,7 +18,7 @@ export default function RootLayout({
 }>) {
     return (
         <html className="dark nunito">
-            <body className="antialiased bg-dark text-white transition-colors duration-300">
+            <body className="antialiased max-w-screen overflow-hidden bg-dark text-white transition-colors duration-300">
                 <Components>{children}</Components>
             </body>
         </html>

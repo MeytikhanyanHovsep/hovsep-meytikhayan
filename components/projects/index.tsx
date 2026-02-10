@@ -1,10 +1,11 @@
 import React from "react";
 import Title from "../title";
 import Item from "./item";
+import { memo } from "react";
 
 type Props = { lang: boolean };
 
-export default function Projects({ lang }: Props) {
+const Projects = memo(function Projects({ lang }: Props) {
     const projects = [
         {
             img: "/work.png",
@@ -27,7 +28,10 @@ export default function Projects({ lang }: Props) {
     ];
 
     return (
-        <section className="relative pt-30">
+        <section
+            id="projects"
+            className="relative pt-30 max-md:pt-10 max-2xl:pt-20"
+        >
             <div
                 className="absolute top-1/2 left-[200px] -translate-x-1/2 -translate-y-1/2 
              w-[3%] h-[100px] 
@@ -41,7 +45,7 @@ export default function Projects({ lang }: Props) {
                     {lang ? "Projects" : "Проекты"}
                 </Title>
 
-                <div className="grid w-full gap-[30px] grid-cols-3">
+                <div className="grid max-2xl:gap-4 w-full  max-md:gap-2 gap-6 max-md:grid-cols-2 grid-cols-3">
                     {projects.map((e, i) => (
                         <Item key={i} {...e} lang={lang} />
                     ))}
@@ -49,4 +53,6 @@ export default function Projects({ lang }: Props) {
             </div>
         </section>
     );
-}
+});
+
+export default Projects;
