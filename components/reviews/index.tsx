@@ -14,39 +14,76 @@ type Props = { lang: boolean };
 const Reviews = memo(function Reviews({ lang }: Props) {
     const reviews = [
         {
-            name: "Jordidsx",
-            type: "company",
-            desc: " Разверстал большой проект очень быстро. Все замечания оперативно правились.",
+            name: "Mikhail",
+            type: "u",
+            desc: [
+                "Excellent contractor! Did everything quickly and with high quality, took all my wishes into account, fixed the website revisions promptly, and was always in touch. Definitely recommend this contractor!",
+                "Отличный исполнитель! Сделал все быстро и качественно, все мои пожелания учел, доработки по сайту исправил быстро, всегда был на связи. Однозначно рекомендую данного исполнителя! !",
+            ],
             stars: 5,
-            img: "https://cdn-edge.kwork.ru/files/avatar/medium/08/4365832-1.jpg",
+            img: "mikhail.webp",
         },
         {
-            name: "Jordidsx",
-            type: "company",
-            desc: " Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat culpa officiis earum odit ullam atque, natus",
-            stars: 3,
-            img: "https://cdn-edge.kwork.ru/files/avatar/medium/08/4365832-1.jpg",
+            name: "Alexander",
+            type: "u",
+            desc: [
+                "The contractor approached the task responsibly, refined the website, and made their own positive adjustments in agreement with me! Definitely recommend working with them, and I’ll be reaching out to them again myself!",
+                "Исполнитель ответсвенно отнесся к задаче, доработал сайт и внес свои положительные корректировки согласовав со мной! Однозначно рекомендую к сотрудничеству, и сам еще ни раз обращусь к нему!",
+            ],
+            stars: 5,
+            img: "alexander.webp",
         },
         {
-            name: "Jordidsx",
-            type: "company",
-            desc: " Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat culpa officiis earum odit ullam atque, natus",
-            stars: 3,
-            img: "https://cdn-edge.kwork.ru/files/avatar/medium/08/4365832-1.jpg",
+            name: "Innovatix",
+            type: "c",
+            desc: [
+                "Satisfied with the cooperation, revisions were made promptly, thanks)",
+                "Довольны с сотрудничеством, правки были сделаны оперативно, спасибо)",
+            ],
+            stars: 5,
+            img: "innovatixdev.webp",
+        },
+
+        {
+            name: "Alex",
+            type: "u",
+            desc: [
+                "Laid out a large project very quickly. All comments were promptly fixed.",
+                "Разверстал большой проект очень быстро. Все замечания оперативно правились.",
+            ],
+            stars: 5,
+            img: "alex.webp",
         },
         {
-            name: "Jordidsx",
-            type: "company",
-            desc: " Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat culpa officiis earum odit ullam atque, natus",
-            stars: 3,
-            img: "https://cdn-edge.kwork.ru/files/avatar/medium/08/4365832-1.jpg",
+            name: "Andrey",
+            type: "u",
+            desc: [
+                "Быстро, качественно, в сроки, хорошо выполнен заказ",
+                "Fast, high quality, on time — the order was well done.",
+            ],
+            stars: 5,
+            img: "andrey.webp",
         },
         {
-            name: "Jordidsx",
-            type: "company",
-            desc: " Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat culpa officiis earum odit ullam atque, natus",
-            stars: 3,
-            img: "https://cdn-edge.kwork.ru/files/avatar/medium/08/4365832-1.jpg",
+            name: "Andrey Bolonin",
+            type: "u",
+            desc: [
+                "1) The task was to lay out a landing page according to the design \n 2) The contractor was always in touch \n 3) Promptly made all revisions — thank you! We’ll reach out again",
+                "1) была задача сверстать лендинг по макету \n  2) исполнитель всегда был на связи \n 3) оперативно вносил все правки спасибо! будем обращаться",
+            ],
+            stars: 5,
+            img: "andreybolinin.webp",
+        },
+
+        {
+            name: "Mher",
+            type: "u",
+            desc: [
+                "The specialist did everything well, responds quickly to all questions, and explains everything clearly. I really liked it — I’ll continue working with this freelancer.",
+                "Специалист выполнил все хорошо, отвечает оперативно по всем вопросам отвечает понятным языком. Все очень понравилось, буду и дальше сотрудничать с этим фрилансером.",
+            ],
+            stars: 5,
+            img: "mher.webp",
         },
     ];
     return (
@@ -61,26 +98,31 @@ const Reviews = memo(function Reviews({ lang }: Props) {
                         {lang ? "Reviews" : "Отзывы"}
                     </Title>
                     <Swiper
-                        slidesPerView={1}
+                        slidesPerView={3}
                         spaceBetween={8}
+                        slidesPerGroup={1}
                         loop={true}
                         modules={[Pagination, Navigation]}
                         pagination={{
                             clickable: true,
                         }}
                         breakpoints={{
-                            576: {
-                                slidesPerView: 2,
-                            },
-                            768: {
-                                spaceBetween: 16,
+                            1440: {
+                                spaceBetween: 24,
                             },
 
                             1024: {
                                 slidesPerView: 3,
                             },
-                            1440: {
-                                spaceBetween: 24,
+                            768: {
+                                spaceBetween: 16,
+                            },
+
+                            576: {
+                                slidesPerGroup: 2,
+                            },
+                            0: {
+                                slidesPerView: 1,
                             },
                         }}
                         navigation={{
@@ -97,7 +139,7 @@ const Reviews = memo(function Reviews({ lang }: Props) {
                     >
                         {reviews.map((e, i) => (
                             <SwiperSlide key={i}>
-                                <Item {...e} />
+                                <Item lang={lang} {...e} />
                             </SwiperSlide>
                         ))}
                     </Swiper>

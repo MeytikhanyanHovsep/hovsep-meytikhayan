@@ -12,7 +12,7 @@ type Props = { children: React.ReactNode };
 
 export default function Components({ children }: Props) {
     const [lang, setLang] = useState<string>("ru");
-    const [activeSection, setActiveSection] = useState<string>("main");
+    const [activeSection, setActiveSection] = useState<string>("home");
 
     useEffect(() => {
         const observerOptions = {
@@ -35,7 +35,7 @@ export default function Components({ children }: Props) {
         );
 
         const sectionIds = [
-            "main",
+            "home",
             "about",
             "projects",
             "services",
@@ -75,12 +75,9 @@ export default function Components({ children }: Props) {
                 }
             />
             <Main lang={lang === "eng"} />
-
             <About lang={lang === "eng"} />
             <Projects lang={lang === "eng"} />
-
             <Services lang={lang === "eng"} />
-
             <Reviews lang={lang === "eng"} />
             <Footer lang={lang === "eng"} />
         </>

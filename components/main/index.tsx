@@ -12,7 +12,7 @@ const Main = memo(function Main({ lang }: Props) {
     return (
         <>
             <main
-                id="main"
+                id="home"
                 className="h-screen grid place-items-center relative w-full "
             >
                 <FloatingLines
@@ -25,8 +25,8 @@ const Main = memo(function Main({ lang }: Props) {
                     interactive={true}
                     parallax={true}
                 />
-                <div className="container">
-                    <div className="h-full max-w-[900px]  text-balance items-center flex gap-3 flex-col justify-center z-50 relative ">
+                <div className="container flex justify-center">
+                    <div className="h-full mx-auto max-w-[900px]  text-balance items-center flex gap-3 flex-col justify-center z-50 relative ">
                         <div className="text-[25px] max-md:text-[18px] max-2xl:text-[20px] flex items-center mb-[-10px]">
                             {lang ? "I am" : "Я"}
                             <span className="invisible">{"-"}</span>
@@ -46,7 +46,7 @@ const Main = memo(function Main({ lang }: Props) {
                                 }
                             />
                         </div>
-                        <h2 className="font-black max-md:text-[25px] max-2xl:text-[43px] text-white text-center leading-tight mb-2 text-[50px] block">
+                        <h2 className="font-black max-md:text-[32px] max-2xl:text-[43px] text-white text-center leading-tight mb-2 max-md:mb-3 text-[50px] block">
                             {lang
                                 ? "Developing digital solutions to scale your business to the next level."
                                 : "Создаю цифровые продукты, которые масштабируют ваш бизнес"}

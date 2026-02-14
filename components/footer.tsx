@@ -1,20 +1,22 @@
 import Image from "next/image";
 import { memo } from "react";
+import { HugeiconsIcon } from "@hugeicons/react";
+
 import {
-    Mail,
-    Send,
-    Github,
-    Layout,
-    Smartphone,
-    Code2,
-    Database,
-    GitMerge,
-    Gauge,
-    FileText,
-    FlaskConical,
-    Settings,
-    ShieldCheck,
-} from "lucide-react";
+    Mail02Icon,
+    TelegramIcon,
+    GithubIcon,
+    Layout01Icon,
+    SmartPhone02Icon,
+    SourceCodeIcon,
+    DatabaseIcon,
+    GitMergeIcon,
+    Timer01Icon,
+    TestTube01Icon,
+    Settings03Icon,
+    SecurityCheckIcon,
+} from "@hugeicons/core-free-icons";
+
 import Link from "next/link";
 import Wave from "react-wavify";
 import "./style.css";
@@ -27,47 +29,101 @@ const Footer = memo(function Footer({ lang }: Props) {
         services: [
             {
                 name: ["Layout", "Верстка"],
-                icon: <Layout className="text-primary w-5 mb-[2px]" />,
+                icon: (
+                    <HugeiconsIcon
+                        strokeWidth={2}
+                        icon={Layout01Icon}
+                        className="text-primary w-5 mb-[2px]"
+                    />
+                ),
                 link: "layout",
             },
             {
                 name: ["Responsivity", "Адаптивность"],
-                icon: <Smartphone className="text-primary w-5 mb-[2px]" />,
+                icon: (
+                    <HugeiconsIcon
+                        strokeWidth={2}
+                        icon={SmartPhone02Icon}
+                        className="text-primary w-5 mb-[2px]"
+                    />
+                ),
                 link: "responsivity",
             },
             {
                 name: ["Frontend", "Фронтенд"],
-                icon: <Code2 className="text-primary w-5 mb-[2px]" />,
+                icon: (
+                    <HugeiconsIcon
+                        strokeWidth={2}
+                        icon={SourceCodeIcon}
+                        className="text-primary w-5 mb-[2px]"
+                    />
+                ),
                 link: "front",
             },
             {
                 name: ["Reliability", "Надежность"],
-                icon: <ShieldCheck className="text-primary w-5 mb-[2px]" />,
+                icon: (
+                    <HugeiconsIcon
+                        strokeWidth={2}
+                        icon={SecurityCheckIcon}
+                        className="text-primary w-5 mb-[2px]"
+                    />
+                ),
                 link: "reliability",
             },
             {
                 name: ["Management", "Состояние"],
-                icon: <GitMerge className="text-primary w-5 mb-[2px]" />,
+                icon: (
+                    <HugeiconsIcon
+                        strokeWidth={2}
+                        icon={GitMergeIcon}
+                        className="text-primary w-5 mb-[2px]"
+                    />
+                ),
                 link: "control",
             },
             {
                 name: ["Integration", "Интеграция"],
-                icon: <Database className="text-primary w-5 mb-[2px]" />,
+                icon: (
+                    <HugeiconsIcon
+                        strokeWidth={2}
+                        icon={DatabaseIcon}
+                        className="text-primary w-5 mb-[2px]"
+                    />
+                ),
                 link: "database",
             },
             {
                 name: ["SEO", "SEO"],
-                icon: <Gauge className="text-primary w-5 mb-[2px]" />,
+                icon: (
+                    <HugeiconsIcon
+                        strokeWidth={2}
+                        icon={Timer01Icon}
+                        className="text-primary w-5 mb-[2px]"
+                    />
+                ),
                 link: "seo",
             },
             {
                 name: ["Testing", "Тестирование"],
-                icon: <FlaskConical className="text-primary w-5 mb-[2px]" />,
+                icon: (
+                    <HugeiconsIcon
+                        strokeWidth={2}
+                        icon={TestTube01Icon}
+                        className="text-primary w-5 mb-[2px]"
+                    />
+                ),
                 link: "test",
             },
             {
                 name: ["Evolution", "Развитие"],
-                icon: <Settings className="text-primary w-5 mb-[2px]" />,
+                icon: (
+                    <HugeiconsIcon
+                        strokeWidth={2}
+                        icon={Settings03Icon}
+                        className="text-primary w-5 mb-[2px]"
+                    />
+                ),
                 link: "evolution",
             },
         ],
@@ -75,17 +131,35 @@ const Footer = memo(function Footer({ lang }: Props) {
             {
                 name: "meytikhanyan.hovsep@gmail.com",
                 link: "mailto:meytikhanyan.hovsep@gmail.com",
-                icon: <Mail className="w-5 text-primary mb-[2px]" />,
+                icon: (
+                    <HugeiconsIcon
+                        strokeWidth={2}
+                        icon={Mail02Icon}
+                        className="w-5 text-primary mb-[2px]"
+                    />
+                ),
             },
             {
                 name: "Meytikhanyan_Hovsep",
                 link: "https://t.me/Meytikhanyan_Hovsep",
-                icon: <Send className="w-5 text-primary mb-[2px]" />,
+                icon: (
+                    <HugeiconsIcon
+                        strokeWidth={2}
+                        icon={TelegramIcon}
+                        className="w-5 text-primary mb-[2px]"
+                    />
+                ),
             },
             {
                 name: "MeytikhanyanHovsep",
                 link: "https://github.com/MeytikhanyanHovsep",
-                icon: <Github className="w-5 text-primary mb-[2px]" />,
+                icon: (
+                    <HugeiconsIcon
+                        strokeWidth={2}
+                        icon={GithubIcon}
+                        className="w-5 text-primary mb-[2px]"
+                    />
+                ),
             },
         ],
     };
@@ -153,15 +227,15 @@ const Footer = memo(function Footer({ lang }: Props) {
                     <h4 className="text-[20px] text-primary max-2xl:text-[18px] max-2xl:mb-1 mb-2">
                         {lang ? "Services" : "Услуги"}
                     </h4>
-                    <ul className="grid max-w-max max-md:grid-cols-2 max-2xl:grid-cols-3 max-xl:gap-4 gap-x-3 gap-y-3 grid-cols-2">
+                    <ul className="grid max-w-max max-md:grid-cols-3 max-xl:gap-4 gap-x-3 gap-y-3 grid-cols-2">
                         {data.services.map((e, i) => (
                             <li key={i}>
                                 <button
                                     onClick={() => handleScroll(e.link)}
-                                    className="flex cursor-pointer transition-all will-change-transform duration-300 hover:text-white text-[14px] items-center hover:scale-105 gap-2 text-gray"
+                                    className="flex cursor-pointer transition-all will-change-transform duration-300 hover:text-white text-[14px] items-center hover:scale-105 gap-2 text-gray max-md:gap-1"
                                 >
                                     {e.icon}
-                                    <span className="max-xl:hidden max-md:block">
+                                    <span className="max-xl:hidden max-md:block max-sm:hidden">
                                         {lang ? e.name[0] : e.name[1]}
                                     </span>
                                 </button>

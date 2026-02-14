@@ -1,29 +1,22 @@
+"use client";
 import React from "react";
 import Title from "../title";
 import Item from "./item";
-import { memo } from "react";
+import { TProject } from "@/types";
 
 type Props = { lang: boolean };
 
-const Projects = memo(function Projects({ lang }: Props) {
-    const projects = [
+export default function Projects({ lang }: Props) {
+    const projects: TProject[] = [
+        { url: "https://apexhash.ru/", img: "apexhash.webp" },
+        { url: "https://geographicawe.vercel.app/", img: "geographic.webp" },
+        { url: "https://berikod.ru/", img: "berikodru.webp" },
+        { url: "https://andreybolonin.com/", img: "andrey.webp" },
+        { url: "https://puti-nn.ru/", img: "putinn.webp" },
+        { url: "https://thejobgate.com/", img: "jobgate.webp" },
         {
-            img: "/work.png",
-            link: "#",
-            likes: 20,
-            isLiked: false,
-        },
-        {
-            img: "/work.png",
-            link: "#",
-            likes: 20,
-            isLiked: true,
-        },
-        {
-            img: "/work.png",
-            link: "#",
-            likes: 20,
-            isLiked: false,
+            url: "https://hovsep-meytikhanyan.vercel.app/",
+            img: "restaurant.webp",
         },
     ];
 
@@ -34,10 +27,10 @@ const Projects = memo(function Projects({ lang }: Props) {
         >
             <div
                 className="absolute top-1/2 left-[200px] -translate-x-1/2 -translate-y-1/2 
-             w-[3%] h-[100px] 
-             bg-linear-to-r from-primary/70 to-transparent 
-             blur-[20px] scale-[10] 
-             -z-1 opacity-60 pointer-events-none will-change-transform"
+              w-[3%] h-[100px] 
+              bg-linear-to-r from-primary/70 to-transparent 
+              blur-[20px] scale-[10] 
+              -z-1 opacity-60 pointer-events-none will-change-transform"
             />
 
             <div className="container">
@@ -45,14 +38,12 @@ const Projects = memo(function Projects({ lang }: Props) {
                     {lang ? "Projects" : "Проекты"}
                 </Title>
 
-                <div className="grid max-2xl:gap-4 w-full  max-md:gap-2 gap-6 max-md:grid-cols-2 grid-cols-3">
-                    {projects.map((e, i) => (
-                        <Item key={i} {...e} lang={lang} />
+                <div className="grid max-2xl:gap-4 w-full max-md:gap-2 gap-6 max-md:grid-cols-2 grid-cols-3">
+                    {projects.map((proj: TProject, ind) => (
+                        <Item key={ind} {...proj} />
                     ))}
                 </div>
             </div>
         </section>
     );
-});
-
-export default Projects;
+}

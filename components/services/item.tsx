@@ -11,10 +11,11 @@ const Item = memo(function Item({ title, description, name }: Props) {
         >
             <div className="absolute z-[-1]  rounded-[17px] w-full h-full 0 left-0 transition-opacity duration-500  opacity-0 group-hover:opacity-100  bg-linear-to-b from-primary/50 via-transparent to-transparent  " />
 
-            <div className="z-10 h-full  rounded-[16px] flex flex-col mt-[3px] bg-linear-to-b from-black/50 to-dark/80 p-5 gap-5 max-md:gap-2 max-2xl:gap-3 max-2xl:p-4">
+            <div className="z-10 h-full  rounded-[16px] flex flex-col mt-[3px] bg-linear-to-b from-black/50 to-dark/80 p-5 relative gap-5 max-md:gap-2 max-2xl:gap-3 max-2xl:p-4">
+                <div className="px-3 absolute py-2 max-2xl:px-2  max-md:py-1 max-2xl:py-1 bg-white/7 rounded-[20px] max-w-min ml-auto flex items-center self-end justify-self-center"></div>
                 <Image
                     alt={name}
-                    src={`/images/icons/${name}.png`}
+                    src={`/images/icons/${name}.webp`}
                     width={70}
                     height={50}
                     className="max-h-[50px] max-md:h-7 max-2xl:max-h-9 max-w-max mb-2 object-contain"
